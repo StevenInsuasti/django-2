@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Enviada</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 3rem 2.5rem;
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+        }
+
+        .icon { font-size: 4rem; margin-bottom: 1rem; }
+
+        h1 { color: #6a1b9a; font-size: 1.8rem; margin-bottom: 0.8rem; }
+
+        p { color: #555; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: #6a1b9a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .btn:hover { background: #4a148c; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">✅</div>
+        <h1>¡Solicitud enviada!</h1>
+        <p>Tu solicitud fue registrada correctamente en el sistema. Pronto recibirás una respuesta.</p>
+        <a href="{% url 'solicitudes:formulario' %}" class="btn">Enviar otra solicitud</a>
+    </div>
+</body>
+</html>
