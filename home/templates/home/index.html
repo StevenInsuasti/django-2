@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Servicios</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .cards {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+            padding: 2.5rem 2rem;
+            width: 280px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 32px rgba(0,0,0,0.14);
+        }
+
+        .card.asistencia { border-top-color: #1a73e8; }
+        .card.solicitudes { border-top-color: #6a1b9a; }
+
+        .card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: #1a1a2e;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.6rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.85; }
+        .btn.azul { background: #1a73e8; }
+        .btn.morado { background: #6a1b9a; }
+
+        footer {
+            margin-top: 3rem;
+            color: #aaa;
+            font-size: 0.82rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏫 Portal de Servicios</h1>
+        <p>Selecciona el servicio que deseas utilizar</p>
+    </header>
+
+    <div class="cards">
+
+        <a href="{% url 'asistencia:formulario' %}" class="card asistencia">
+            <div class="icon">📋</div>
+            <h2>Registro de Asistencia</h2>
+            <p>Registra tu asistencia indicando hora de ingreso, salida y estado de presencia.</p>
+            <span class="btn azul">Ir al formulario</span>
+        </a>
+
+        <a href="{% url 'solicitudes:formulario' %}" class="card solicitudes">
+            <div class="icon">📝</div>
+            <h2>Formulario de Solicitud</h2>
+            <p>Envía una solicitud académica, administrativa, técnica u otra según tu necesidad.</p>
+            <span class="btn morado">Ir al formulario</span>
+        </a>
+
+    </div>
+
+    <footer>
+        Taller Formularios Django &mdash; Steven Insuasti &amp; Sebastián Rosero
+    </footer>
+
+</body>
+</html>
